@@ -1,6 +1,10 @@
 
 <?php 
 
+$designs_folder_name = "designs";
+
+
+
 function out($what, $stop=true){
    echo "<pre>";var_export($what);
    if($stop) die;
@@ -54,7 +58,7 @@ function get_file_data($file){
 
 
 $dirs_array = [];
-$dirs = scandir("designs");
+$dirs = scandir($designs_folder_name);
 foreach($dirs as $value){
    if($value == '.' || $value == '..') {continue;}
    else $dirs_array[] = $value;
@@ -66,20 +70,8 @@ foreach($dirs as $value){
 $files_array = [];
 foreach($dirs_array as $dir){
    // out($dir,false);
-   $files_array["designs/".$dir] = array_keys( dir_to_array("designs/".$dir) );
+   $files_array[$dir] = array_keys( dir_to_array($designs_folder_name."/".$dir) );
 }
-
-// out($files_array);
-
-
-// $files = dir_to_array("designs/startbootstrap");
-// $files2 = dir_to_array("designs/freelance");
-
-// $websites = array_keys($files);
-// $websites_freelance = array_keys($files2);
-
-// echo "<pre>"; var_export($websites); die;
-
 
 
 ?>
@@ -112,13 +104,8 @@ foreach($dirs_array as $dir){
       }
       iframe{
          width:100%;
-         /*min-height:100%;*/
          height:100%;
          display:block;
-         /*position:absolute;*/
-     /*    top:0;
-         left:0;
-         top:50px;*/
          text-align:center;
          margin:0;
       }
@@ -126,12 +113,6 @@ foreach($dirs_array as $dir){
       #cssmenu li:hover{
          cursor: pointer;
       }
-
-
-/*      #current_site{
-         border:1px solid #ccc !important;
-         border-radius: 10px;
-         /*padding:5px !important;*/
       }*/
 
 
@@ -152,51 +133,24 @@ foreach($dirs_array as $dir){
    <li class='active has-sub'><a href='#'><?=$folder?></a>
       <ul>
       <?php foreach($files as $website){ ?>
-         <li><a onclick="iframeTo('<?=$folder?>','<?=$website?>');return false;"><?=$website?></a>
+         <li><a onclick="iframeTo('<?=$designs_folder_name."/".$folder?>','<?=$website?>');return false;"><?=$website?></a>
       <?php }?>
+
+<!--          <li class='has-sub'><a href='#'>Product 2</a>
+            <ul>
+               <li><a href='#'>Sub Product</a></li>
+               <li><a href='#'>Sub Product</a></li>
+            </ul>
+         </li>  -->
+
       </ul>
    </li>   
 <?php } ?>
 
 
-
-<!--    <li class='active has-sub'><a href='#'>StartBootstrap Websites</a>
-      <ul>
-      <?php foreach($websites as $website){ ?>
-         <li><a onclick="iframeTo('startbootstrap','<?=$website?>');return false;"><?=$website?></a>
-      <?php }?> -->
-
-<!--          <li class='has-sub'><a href='#'>Product 1</a>
-            <ul>
-               <li><a href='#'>Sub Product</a></li>
-               <li><a href='#'>Sub Product</a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'>Product 2</a>
-            <ul>
-               <li><a href='#'>Sub Product</a></li>
-               <li><a href='#'>Sub Product</a></li>
-            </ul>
-         </li> -->
-
-<!--       </ul>
-   </li>
- -->
-
-
-
-<!--    <li class='active has-sub'><a href='#'>Free Designs</a>
-      <ul>
-      <?php foreach($websites_freelance as $website){ ?>
-         <li><a onclick="iframeTo('freelance','<?=$website?>');return false;"><?=$website?></a>
-      <?php }?>
-      </ul>
-   </li> -->
-
-
-<!-- 
-   <li><a href='#'>About</a></li>
+<!--    <li><a href='#'>About</a></li>
    <li><a href='#'>Contact</a></li> -->
+
 
    <li class=''><a class='' href='#' id='current_site'></a></li>
 
