@@ -152,7 +152,7 @@ foreach($dirs_array as $dir){
    <li><a href='#'>Contact</a></li> -->
 
 
-   <li class=''><a class='' href='#' id='current_site'></a></li>
+   <li class=''><a class='' href='#' id='current_site' target='_blank'></a></li>
 
 </ul>
 
@@ -175,7 +175,7 @@ foreach($dirs_array as $dir){
       let this_website = `${folder}/${iframe_name}`;
       console.log(this_website);
       main_iframe.src = this_website;
-      current_site.innerHTML = "visit: <i class='label label-default'>"+ iframe_name+"</i>";
+      current_site.innerHTML = "Full-Page: <i class='label label-default'>"+ iframe_name+"</i>";
       current_site.href = this_website;
    }
 </script>
