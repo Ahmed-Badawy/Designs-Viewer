@@ -94,7 +94,6 @@ foreach($dirs_array as $dir){
    <script src="assets/script.js"></script>
 
        <style type="text/css">
-
       body{
          margin:0;
          padding:0;
@@ -113,14 +112,11 @@ foreach($dirs_array as $dir){
       #cssmenu li:hover{
          cursor: pointer;
       }
-      }*/
-
-
        </style>
 
 
 
-   <title>CSS MenuMaker</title>
+   <title>Designs Viewer</title>
 </head>
 <body>
 
