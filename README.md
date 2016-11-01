@@ -10,10 +10,11 @@
 
 ---
 
-<strong>there is another thing: same idea implies to external websites that allow this. </strong></h3>
-<span style="color: #ff0000;">(notice that: many websites don't allow putting their website inside an iframe) </span>
+### there is another thing: same idea implies to external websites that allow this.
+(notice that: many websites don't allow putting their website inside an iframe)
 
-here's is a life demo: <a href="http://ahmed-badawy.com/projects/Designs-Viewer/websites.php" target="_blank">Design-Viewer (external websites)</a>
+##### Link:  [Design-Viewer (external websites)](http://ahmed-badawy.com/projects/Designs-Viewer/websites.php)
+
 you can populate this with the websites of your needs. just edit the array in the begining of the file (websites.php)
 you will find the code in the same repo...
 
